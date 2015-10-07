@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sendmail>
+  <smtp>
+    <host>127.0.0.1</host>
+    <port>25</port>
+    <ssl>false</ssl>
+    <user>foo</user>
+    <password>var</password>
+    <timeout>60000</timeout>
+  </smtp>
+  <message>
+    <subject encoding="utf-8">subject</subject>
+    <from>
+      <address displayName="">email address</address>
+    </from>
+    <to>
+      <address displayName="">email address</address>
+    </to>
+    <cc>
+      <address displayName="">email address</address>
+    </cc>
+    <bcc>
+      <address displayName="">email address</address>
+    </bcc>
+    <body encoding="utf-8" html="false">
+      <!--<![CDATA[ if you want to set body as html, use 'CDATA' section. And then set to true on html attribute of body tag]]>-->
+      body
+    </body>
+    <attachment>
+      <file>path/to/file</file>
+    </attachment>
+  </message>
+</sendmail>
