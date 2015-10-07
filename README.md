@@ -21,9 +21,9 @@
 |`/e charset`|件名の文字エンコーディングを指定する。|
 |`/s subject`|件名を指定する。|
 |`/f foo@var.com<foo>`|送信元メールアドレスを指定する。`<foo>`は表示名。省略可能。|
-|`/t foopvar.com<foo>`|宛先(To)を指定する。`<foo>`は表示名。省略可能。宛先を複数指定する場合は`;`で連結する。|
-|`/c foopvar.com<foo>`|宛先(Cc)を指定する。`<foo>`は表示名。省略可能。宛先を複数指定する場合は`;`で連結する。|
-|`/b foopvar.com<foo>`|宛先(Cc)を指定する。`<foo>`は表示名。省略可能。宛先を複数指定する場合は`;`で連結する。|
+|`/t foo@var.com<foo>`|宛先(To)を指定する。`<foo>`は表示名。省略可能。宛先を複数指定する場合は`;`で連結する。|
+|`/c foo@var.com<foo>`|宛先(Cc)を指定する。`<foo>`は表示名。省略可能。宛先を複数指定する場合は`;`で連結する。|
+|`/b foo@var.com<foo>`|宛先(Bcc)を指定する。`<foo>`は表示名。省略可能。宛先を複数指定する場合は`;`で連結する。|
 |`/h`|HTMLメールとして送信する場合は指定する。|
 |`/E charset`|本文の文字エンコーディングを指定する。|
 |`/B body`|本文を指定する。|
@@ -34,11 +34,11 @@
 
 ## XMLファイルで送信内容を指定する方法
 XMLファイルにSMTP情報と送信メッセージの内容を定義しておき、実行時に読み込ませる方法です。  
-コマンドライン引数として`/x`を指定することでXMLファイルを読み込ませることができます。
+コマンドライン引数に`/x`を指定することでXMLファイルを読み込ませることができます。
 
 ### コマンド
 ```
-> SendMail.exe /x path\to\SendMail.exe
+> SendMail.exe /x path\to\SendMail.xml
 ```
 ### XML
 以下のXMLを参考に必要な箇所を編集します。
@@ -46,7 +46,7 @@ XMLファイルにSMTP情報と送信メッセージの内容を定義してお�
 <?xml version="1.0" encoding="utf-8" ?>
 <sendmail>
   <smtp>
-    <host>hostname or ip</host>
+    <host>servername or ip</host>
     <port>25</port>
     <ssl>false</ssl>
     <user></user>
